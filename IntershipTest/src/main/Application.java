@@ -10,12 +10,12 @@ public class Application {
         university.addStudent(new Student("Andrew Kostenko",70));
         university.addStudent(new Student("Julia Veselkina",9));
         university.addStudent(new Student("Maria Perechrest",37));
-        university.addStudent(new Student("Dasha Pretty",46));
+        university.addStudent(new Student("Dasha Pretty",56));
         university.addStudent(new Student("Cara Mavella",12));
+        university.addStudent(new Student("Philip Tomphson",88));
 
         Internship internship = new Internship("Interlink");
         System.out.println("List of internship's students:");
         System.out.println(internship.getStudents());
-        System.out.println(internship.getAverageLevel());
     }
 }
