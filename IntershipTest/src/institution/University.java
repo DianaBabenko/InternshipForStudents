@@ -1,13 +1,13 @@
 package institution;
 
 import person.Student;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class University {
     String name;
-    List<Student> students = new ArrayList<>();
+    public static List<Student> students = new ArrayList<>();
+    Student student;
 
     public University(String name) {
         this.name = name;
@@ -21,13 +21,7 @@ public class University {
         students.add(student);
     }
 
-    public List<Student> getStudents() {
-        return this.students;
+    public static List<Student> getStudents() {
+        return students;
     }
 }
-
-//electricityAccounting.addMonthData(dataForTheMonth);
-
-//public void addMonthData(DataForTheMonth data) {
-//		allData.add(data);
-// }

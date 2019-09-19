@@ -8,37 +8,43 @@ import java.util.List;
 
 public class Internship {
     String name;
-    List <Student> students = new ArrayList<>();
-    this.students = University.getStudents();
-    //===== передать лист студентов
+    List<Student> betterStudents = new ArrayList<>();
+    Integer averageLevel = 0;
 
     public Internship(String name) {
         this.name = name;
+        calcAverageLevel();
+        setAverageLevel();
     }
 
-
-    // відібрати студентів з високими навичками
-    public List<Student> getBetterStudent(){
-        List<Student> betterStudents = new ArrayList<>();
-
-        for (int i = 0; i < this.students.size(); i++) {
-            if (this.students.get(i).getLevel().getKnowledge() > 50) {
-                betterStudents.add(students.get(i));
+    public void checkLevelOfKnowledge(){
+        for (int i = 0; i < University.getStudents().size(); i++) {
+            if (University.getStudents().get(i).getKnowledge().getLevel() > getAverageLevel()) {
+                this.betterStudents.add(University.getStudents().get(i));
             }
         }
-        return betterStudents;
     }
 
-    /*// отримати студентів з високими навичками
-    public void setStudent(Student student) {
-        students.add(student);
-    }*/
+    public Integer calcAverageLevel() {
+        averageLevel = 0;
+        Integer sizeOfStudent = University.getStudents().size();
+        for (int i = 0; i < sizeOfStudent ; i++) {
+            averageLevel += University.getStudents().get(i).getKnowledge().getLevel();
+        }
+        averageLevel /= sizeOfStudent;
+        return averageLevel;
+    }
 
+    public Integer getAverageLevel() {
+        return averageLevel;
+    }
 
-
+    public void setAverageLevel() {
+        this.averageLevel = averageLevel;
+    }
 
     public String getStudents() { //виведення студентів з високими навичками
-
-        return getBetterStudent().toString();
+        checkLevelOfKnowledge();
+        return this.betterStudents.toString();
     }
 }
