@@ -23,6 +23,5 @@ public class Student {
         return String.format("%s : %s",
                 this.getName(), getKnowledge().getLevel());
     }
-
 }
 
