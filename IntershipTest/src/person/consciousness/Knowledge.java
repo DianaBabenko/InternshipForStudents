@@ -7,7 +7,7 @@ public class Knowledge {
         this.level = level;
     }
 
-    public Integer getKnowledge(){
+    public Integer getLevel(){
         return this.level;
     }
 }
